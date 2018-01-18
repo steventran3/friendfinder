@@ -24,8 +24,11 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         
         let userAnswers = req.body
+        console.log('-----------')
+        console.log(userAnswers)
+        console.log('-----------')
         let currentBestfriend = {
-            totalDifference: 50
+            totalDifference: 40
         }
         
         for (let i = 0; i < friendsData.length; i++) {
@@ -41,7 +44,9 @@ module.exports = function (app) {
                 currentBestfriend.totalDifference = totalDifference;
             }
         }
+        console.log('**********')
         console.log(currentBestfriend)
+        console.log('**********')
         res.json(currentBestfriend)
     });
 
